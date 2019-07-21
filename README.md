@@ -7,7 +7,6 @@
 
 ## TODO
 
-1.  使用 hashMap 优化 find 操作
 2.  完善 单测 （mocha 改为用 jest）
 3.  完善 REDEME.md
 4.  增加 使用案例
