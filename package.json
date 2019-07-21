@@ -1,7 +1,7 @@
 {
   "name": "cache-LRU",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "jest"
   },
