@@ -1,27 +1,24 @@
 const Link = require("../lib/link");
-const assert = require("assert");
 
 describe("link -> addAtTail()", function() {
   it("add one Node to tail", () => {
     var link = new Link();
     link.addAtTail("1", { value: 10 });
-    assert(link.head.next);
-    assert.equal(link.head.next.value.value, 10);
+    expect(link.head.next).toBeTruthy();
+    expect(link.head.next.value.value).toBe(10);
   });
 
   it("add two Node to tail", () => {
     var link = new Link();
     link.addAtTail("1", { value: 1 });
     link.addAtTail("2", { value: 2 });
-    assert(link.head.next);
-    assert.equal(link.head.next.value.value, 1);
-    assert(link.head.next.next.value.value, 2);
-
-    assert.equal(
-      link.head.next.next.prev.value.value,
+    expect(link.head.next).toBeTruthy();
+    expect(link.head.next.value.value).toBe(1);
+    expect(link.head.next.next.value.value).toBe(2);
+    expect(link.head.next.next.prev.value.value).toBe(
       link.head.next.value.value
     );
-    assert.equal(link.head.next.next.prev.value.value, 1);
+    expect(link.head.next.next.prev.value.value).toBe(1);
   });
 
   it("add three Node to tail", () => {
@@ -29,14 +26,14 @@ describe("link -> addAtTail()", function() {
     link.addAtTail("1", { value: 1 });
     link.addAtTail("2", { value: 2 });
     link.addAtTail("3", { value: 3 });
-    assert.equal(link.head.next.next.next.value.value, 3);
+    expect(link.head.next.next.next.value.value).toBe(3);
   });
 
   it("add key equal '' of node", () => {
     var link = new Link();
-    assert.throws(() => {
+    expect(() => {
       link.addAtTail("", { value: 1 });
-    });
+    }).toThrow();
   });
 });
 
@@ -45,7 +42,7 @@ describe("link -> addAtHead()", () => {
     let link = new Link();
     link.addAtHead("1", { value: 1 });
 
-    assert.equal(link.head.next.value.value, 1);
+    expect(link.head.next.value.value).toBe(1);
   });
 
   it("add tow Node to Head", () => {
@@ -53,7 +50,7 @@ describe("link -> addAtHead()", () => {
     link.addAtHead("2", { value: 2 });
     link.addAtHead("1", { value: 1 });
 
-    assert.equal(link.head.next.value.value, 1);
+    expect(link.head.next.value.value).toBe(1);
   });
 
   it("first call addAtTail() then call addAtHead()", () => {
@@ -61,14 +58,14 @@ describe("link -> addAtHead()", () => {
     link.addAtTail("2", { value: 2 });
     link.addAtHead("1", { value: 1 });
 
-    assert.equal(link.head.next.value.value, 1);
+    expect(link.head.next.value.value).toBe(1);
   });
 
   it("add key equal '' of node", () => {
     var link = new Link();
-    assert.throws(() => {
+    expect(() => {
       link.addAtHead("", { value: 1 });
-    });
+    }).toThrow();
   });
 });
 
@@ -77,7 +74,7 @@ describe("link -> find()", () => {
     let link = new Link();
     link.addAtTail("1", { value: 1 });
     let node = link.find("1");
-    assert(node);
+    expect(node).toBeTruthy();
   });
 
   it("find node of key equal 2", () => {
@@ -86,22 +83,22 @@ describe("link -> find()", () => {
     link.addAtTail("2", { value: 2 });
 
     let node = link.find("1");
-    assert(node);
+    expect(node).toBeTruthy();
   });
 
   it("not find node of not exist", () => {
     let link = new Link();
     let node = link.find("1");
-    assert(!node);
+    expect(node).toBeUndefined();
   });
 });
 
 describe("link -> delete()", () => {
   it("delete node of not exist", () => {
     let link = new Link();
-    assert.throws(() => {
+    expect(() => {
       link.delete();
-    });
+    }).toThrow();
   });
 
   it("delete one node ", () => {
@@ -109,7 +106,7 @@ describe("link -> delete()", () => {
     link.addAtTail("1", { value: 1 });
     let node = link.find("1");
     link.delete(node);
-    assert(!link.find("1"));
+    expect(link.find("1")).toBeUndefined();
   });
 
   it("delete two node", () => {
@@ -118,10 +115,10 @@ describe("link -> delete()", () => {
     link.addAtTail("2", { value: 2 });
     let nodeA = link.find("1");
     link.delete(nodeA);
-    assert(!link.find("1"));
+    expect(link.find("1")).toBeUndefined();
     let nodeB = link.find("2");
     link.delete(nodeB);
-    assert(!link.find("2"));
+    expect(link.find("2")).toBeUndefined();
   });
 });
 
@@ -131,7 +128,7 @@ describe("link -> deleteAtTail()", () => {
     link.addAtTail("1", { value: 1 });
 
     link.deleteAtTail();
-    assert(!link.find("1"));
+    expect(link.find("1")).toBeUndefined();
   });
 
   it("delete two node", () => {
@@ -140,9 +137,9 @@ describe("link -> deleteAtTail()", () => {
     link.addAtTail("2", { value: 2 });
 
     link.deleteAtTail();
-    assert(!link.find("2"));
-    assert(link.find("1"));
+    expect(link.find("2")).toBeUndefined();
+    expect(link.find("1")).toBeTruthy();
     link.deleteAtTail();
-    assert(!link.find("1"));
+    expect(link.find("1")).toBeUndefined();
   });
 });

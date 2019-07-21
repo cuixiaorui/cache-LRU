@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "jest"
   },
   "license": "MIT",
   "devDependencies": {
-    "mocha": "^6.2.0"
+    "jest": "^24.8.0"
   }
 }
