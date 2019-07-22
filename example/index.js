@@ -51,6 +51,7 @@ function example3() {
   // 2,5,4,3,1
   console.log(...lru.keys());
 }
+example3();
 
 /**
  * forEach
