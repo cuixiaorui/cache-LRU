@@ -8,7 +8,7 @@
 
 # 高效的缓存淘汰策略（LRU）
 
-> 使用 hashMap + double linked list 实现所有操作时间复杂度为 O(1) 的 LRU
+使用 hashMap + double linked list 实现所有操作时间复杂度为 O(1) 的 LRU
 
 ## Install
 
