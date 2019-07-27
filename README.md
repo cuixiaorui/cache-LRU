@@ -5,16 +5,12 @@
 
 > 高效的缓存淘汰策略（LRU）
 
-## TODO
 
-4.  发布 npm
-5.  书写整体思路（掘金）
-
-<!-- ## Install
+## Install
 
 ```sh
-npm install
-``` -->
+npm install cache-LRU
+``` 
 
 ## API
 
