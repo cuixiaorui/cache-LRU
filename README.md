@@ -2,14 +2,18 @@
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
 </p>
-
+<!-- 
 > 高效的缓存淘汰策略（LRU）
+> 使用 hashMap + double linked list 实现所有操作时间复杂度为 O(1) 的 LRU -->
+
+# 高效的缓存淘汰策略（LRU）
+
 > 使用 hashMap + double linked list 实现所有操作时间复杂度为 O(1) 的 LRU
 
 ## Install
 
 ```sh
-npm install cache-LRU
+npm install cache-lru-high
 ```
 
 ## API

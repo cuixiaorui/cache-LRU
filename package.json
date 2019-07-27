@@ -1,12 +1,30 @@
 {
-  "name": "cache-LRU",
+  "name": "cache-lru-high",
   "version": "1.0.0",
+  "description": "使用 hashMap + double linked list 实现所有操作时间复杂度为 O(1) 的 LRU",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cuixiaorui/cache-LRU.git"
+  },
+  "author": {
+    "name": "cuixiaorui",
+    "email": "cui_xiaorui@126.com"
+  },
+  "homepage": "https://github.com/cuixiaorui/cache-LRU",
+  "bugs": "https://github.com/cuixiaorui/cache-LRU/issues",
   "main": "lib/index.js",
   "scripts": {
     "test": "jest"
   },
+  "keywords": [
+    "cache",
+    "lru"
+  ],
   "license": "MIT",
   "devDependencies": {
     "jest": "^24.8.0"
+  },
+  "dependencies": {
+    "cache-lru-high": "^1.0.0"
   }
 }
